@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta Marker Interaktif</title>
+  <link rel="stylesheet" href="/css/map.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="js/map.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #e9f5ff;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 1rem;
+    }
+
+    .map-container {
+      width: 90%;
+      max-width: 1200px;
+      height: 80vh;
+      margin: 20px auto;
+      border: 2px solid #007bff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      z-index: 10;
+      width: 350px;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .popup-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button#add-marker {
+      background-color: #afbab2;
+      color: white;
+    }
+
+    button#add-marker:hover {
+      background-color: #218838;
+    }
+
+    button#cancel {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    button#cancel:hover {
+      background-color: #c82333;
+    }
+
+    footer {
+      width: 100%;
+      padding: 20px;
+      background-color: #0056b3;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      border-top: 2px solid #004080;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tandai Tempat Makan</h1>
+    <p>Temukan lokasi dengan mudah dan tambahkan marker favorit Anda!</p>
+  </header>
+  <div id="map" class="map-container"></div>
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Masukkan Lokasi:</h3>
+      <input type="text" id="marker-description" placeholder="Deskripsi marker" />
+      <div class="popup-actions">
+        <button id="add-marker">Tambah Marker</button>
+        <button id="cancel">Batal</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

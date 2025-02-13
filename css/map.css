@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(to right, #f7f8fc, #e8ebf0);
+  }
+  
+  .map-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .popup {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border: 1px solid #d6d6d6;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .popup-content h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .popup-content p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+  }
+  
+  .popup-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button#add-marker {
+    background: linear-gradient(to right, #28a745, #45b657);
+    color: white;
+  }
+  
+  button#add-marker:hover {
+    background: linear-gradient(to right, #45b657, #28a745);
+  }
+  
+  button#cancel {
+    background: linear-gradient(to right, #dc3545, #e4605e);
+    color: white;
+  }
+  
+  button#cancel:hover {
+    background: linear-gradient(to right, #e4605e, #dc3545);
+  }
+  
+  /* Animasi untuk popup */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  

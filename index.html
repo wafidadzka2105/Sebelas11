@@ -19,7 +19,7 @@
 
     header {
       width: 100%;
-      padding: 20px;
+      padding: 15px;
       background: linear-gradient(90deg, #007bff, #0056b3);
       color: white;
       text-align: center;
@@ -28,18 +28,18 @@
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     header p {
-      margin: 8px 0 0;
+      margin: 5px 0 0;
       font-size: 1rem;
     }
 
     .map-container {
       width: 90%;
       max-width: 1200px;
-      height: 80vh;
+      height: 70vh;
       margin: 20px auto;
       border: 2px solid #007bff;
       border-radius: 12px;
@@ -47,7 +47,7 @@
     }
 
     .popup {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -57,7 +57,8 @@
       padding: 20px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       z-index: 10;
-      width: 350px;
+      width: 90%;
+      max-width: 350px;
     }
 
     .popup.hidden {
@@ -94,7 +95,7 @@
     }
 
     button#add-marker {
-      background-color: #afbab2;
+      background-color: #28a745;
       color: white;
     }
 
@@ -113,7 +114,7 @@
 
     footer {
       width: 100%;
-      padding: 20px;
+      padding: 15px;
       background-color: #0056b3;
       text-align: center;
       font-size: 16px;
@@ -124,6 +125,54 @@
 
     footer p {
       margin: 0;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .map-container {
+        height: 60vh;
+      }
+
+      .popup {
+        width: 80%;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      header p {
+        font-size: 0.8rem;
+      }
+
+      .map-container {
+        height: 50vh;
+      }
+
+      .popup {
+        width: 90%;
+        padding: 15px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
@@ -144,7 +193,7 @@
     </div>
   </div>
   <footer>
-    <p></p>
+    <p>&copy; 2025 Peta Interaktif</p>
   </footer>
 </body>
 </html>
